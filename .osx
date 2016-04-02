@@ -20,6 +20,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
+sudo pmset displaysleep 15
+sudo pmset sleep 30
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -248,7 +250,7 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 #defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
