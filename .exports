@@ -40,6 +40,12 @@ PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
 [ -d "/usr/texbin" ]               && PATH="/usr/texbin:$PATH"
 [ -d "/usr/local/share/npm/bin" ]  && PATH="/usr/local/share/npm/bin:$PATH"
+
+# use Unix Style cmd for mac-osx
+if brew list | grep coreutils > /dev/null; then
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
+
 export PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/local/lib/erlang/man:$MANPATH
 export LD_LIBRARY_PATH=/usr/local/lib

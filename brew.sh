@@ -1,18 +1,69 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
 
+# Set the colours you can use
+black='\033[0;30m'
+white='\033[0;37m'
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+blue='\033[0;34m'
+magenta='\033[0;35m'
+cyan='\033[0;36m'
+
+#  Reset text attributes to normal + without clearing screen.
+alias Reset="tput sgr0"
+
+# Color-echo.
+# arg $1 = message
+# arg $2 = Color
+cecho() {
+    echo "${2}${1}"
+    Reset # Reset to normal.
+    return
+}
+
+
+cecho "attension: please make sure you have installed the command line tools use: xcode-select --install" $yellow
+echo ""
+
+
+# Homebrew
+# http://brew.sh
+if hash brew 2>/dev/null; then
+	cecho "Homebrew already installed" $green
+else
+	cecho "Installing Homebrew" $yellow
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew doctor
+fi
+
+# Homebrew Cask
+# http://caskroom.io
+if command brew cask 1>/dev/null; then
+	cecho "Homebrew Cask already installed" $green
+else
+	cecho "Installing Homebrew Cask" $yellow
+    brew tap caskroom/cask
+	brew install caskroom/cask/brew-cask
+fi
+
+
+# Install command-line tools using Homebrew.
 # Ask for the administrator password upfront.
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+cecho "Updating Homebrew" $yellow
 # Make sure we’re using the latest Homebrew.
-brew update
+#brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+#brew upgrade --all
+
+cecho "Install command-line tools ... " $yellow
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -42,7 +93,8 @@ brew install ringojs
 brew install narwhal
 
 # Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
+brew install macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
+brew install global --with-exuberant-ctags --with-pygments --HEAD
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
@@ -81,12 +133,12 @@ brew install xpdf
 brew install xz
 
 # Install other useful binaries.
-brew install ack
-brew install dark-mode
+#brew install ack
+#brew install dark-mode
 #brew install exiv2
 brew install git
 brew install git-lfs
-brew install imagemagick --with-webp
+#brew install imagemagick --with-webp
 brew install lua
 brew install lynx
 brew install p7zip
@@ -101,5 +153,83 @@ brew install tree
 brew install webkit2png
 brew install zopfli
 
+# custom my command line tools
+#brew install tmux
+brew install aspell
+brew install autojump
+brew install ctags
+brew install curl
+brew install fzf
+brew install trash
+brew install pcre
+brew install openssl
+brew install zsh
+brew install zsh-completions
+brew install graphviz
+brew install htop-osx
+brew install plantuml.jar
+brew install git-flow-avh
+# imagemagick vs graphicsmagick
+brew install graphicsmagick
+brew install proxychains-ng
+brew install the_silver_searcher
+# Note: this installs `npm` too, using the recommended installation method.
+brew install node
+# Install io.js
+brew install iojs
+
 # Remove outdated versions from the cellar.
+cecho "Removing outdated versions from the brew cellar." $yellow
 brew cleanup
+
+
+echo ""
+cecho "Now time to install my favorate apps ..." $yellow
+apps=(
+	# Utilities
+    alfred
+    dropbox
+    google-chrome
+    firefox
+    caffeine
+    aliwangwang
+    thunder
+    Transmission
+    baiducloud
+    vlc
+    qq
+
+    # Dev Stuff
+    cord
+    mou
+    keycastr
+    licecap
+    iterm2
+    sourcetree
+    cheatsheet
+    dash
+    java
+    jumpcut
+    steam
+)
+
+for item in ${apps[@]}; do
+	cecho "> ${item}" $magenta
+done
+
+echo ""
+
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes )
+		    cecho "Ok! installing apps, please wait ... " $yellow
+		    brew cask install --appdir="/Applications" ${apps[@]}
+		    break;;
+		No ) break;;
+	esac
+done
+
+
+echo ""
+
+cecho "Done, Happy Hacking At the Speed Of The Thought" $green

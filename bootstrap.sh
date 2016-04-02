@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/unstall global --with-exuberant-ctags --with-pygmentssr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE}")";
 
