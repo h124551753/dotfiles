@@ -236,7 +236,15 @@ select yn in "Yes" "No"; do
 	esac
 done
 
-echo -e "\033[40;33mchange the default shell into: /user/local/bin/bash"\0330m"
-sudo chsh -s /bin/bash
 
-cecho -e "Done, Happy Hacking At the Speed Of The Thought" $green
+echo -e "\032[41;32m autojump deploy \033[0m"
+# for autojump: https://github.com/wting/autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
+
+
+echo "\033[40;33mchange the default shell into: /user/local/bin/bash\0330m"
+sudo chsh -s /usr/local/bin/bash
+
+
+cecho "Done, Happy Hacking At the Speed Of The Thought" $green

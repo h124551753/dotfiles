@@ -92,18 +92,19 @@ select yn in "Yes" "No"; do
 done
 
 
-echo -e "\033[42;32m autojump deploy \033[0m"
+echo -e "\032[41;32m autojump deploy \033[0m"
 # for autojump: https://github.com/wting/autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
 
-echo -e "\033[42;32m install the fzf\033[0m"
+echo -e "\033[42;32m install the fzf \033[0m"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 
 echo -e "\033[42;32m change the default shell into: /bin/bash\033[0m"
 sudo chsh -s /bin/bash
+
 
 cecho "Done, Happy Hacking At the Speed Of The Thought" $green
