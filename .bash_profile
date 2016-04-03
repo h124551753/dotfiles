@@ -46,3 +46,7 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+# use substitue the mac-osx default bash for no support bash_completion
+[[ `uname -s` == "Linux" ]] && chsh -s /bin/bash
+[[ `uname -s` == "Darwin" ]] && chsh -s /usr/local/bin/bash

@@ -230,7 +230,7 @@ select yn in "Yes" "No"; do
 	esac
 done
 
+echo -e "\033[40;33mchange the default shell into: /user/local/bin/bash"\0330m"
+sudo chsh -s /bin/bash
 
-echo ""
-
-cecho "Done, Happy Hacking At the Speed Of The Thought" $green
+cecho -e "Done, Happy Hacking At the Speed Of The Thought" $green

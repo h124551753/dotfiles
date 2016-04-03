@@ -29,8 +29,6 @@ cecho "attension: please make sure you have installed the command line tools use
 echo ""
 
 
-# Homebrew
-# http://brew.sh
 if hash apt 2>/dev/null; then
 	cecho "apt has been installed, just continue install ..." $green
 else
@@ -39,7 +37,6 @@ else
 fi
 
 
-# Install command-line tools using Homebrew.
 # Ask for the administrator password upfront.
 sudo -v
 
@@ -88,13 +85,15 @@ select yn in "Yes" "No"; do
 	case $yn in
 		Yes )
 		    cecho "Ok! installing apps, please wait ... " $yellow
-		    apt get install ${apps[@]}
+		    apt-get install ${apps[@]}
 		    break;;
 		No ) break;;
 	esac
 done
 
 
-echo ""
+echo "change the default shell into: /bin/bash"
+
+sudo chsh -s /bin/bash
 
 cecho "Done, Happy Hacking At the Speed Of The Thought" $green

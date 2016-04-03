@@ -28,7 +28,8 @@ echo -e "\033[41;32m start to install command line tools for your system ...\033
 
 sysType=`uname -s`
 
-echo "Your system is $sysType"
+echo -e "\033[41;32m Your system is $sysType \033[0m"
+
 if [ $sysType = "Linux" ]; then
   source ~/apt.sh;
 elif [ $sysType = "Darwin" ]; then
