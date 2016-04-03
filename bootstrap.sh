@@ -20,3 +20,19 @@ else
 	fi;
 fi;
 unset doIt;
+
+
+echo ""
+
+echo -e "\033[41;32m start to install command line tools for your system ...\033[0m"
+
+sysType=`uname -s`
+
+echo "Your system is $sysType"
+if [ $sysType = "Linux" ]; then
+  source ~/apt.sh;
+elif [ $sysType = "Darwin" ]; then
+  source ~/brew.sh;
+else
+  echo -e "\033[41;32m unsupported system, exit \033[0m"
+fi
