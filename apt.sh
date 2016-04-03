@@ -92,7 +92,7 @@ select yn in "Yes" "No"; do
 done
 
 
-echo "change the default shell into: /bin/bash"
+echo -e "\033[42;32m change the default shell into: /bin/bash\033[0m"
 
 sudo chsh -s /bin/bash
 
