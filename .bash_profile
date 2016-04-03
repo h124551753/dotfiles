@@ -51,5 +51,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 [[ `uname -s` == "Linux" ]] && chsh -s /bin/bash
 [[ `uname -s` == "Darwin" ]] && chsh -s /usr/local/bin/bash
 
-# for autojump
+# for autojump: https://github.com/wting/autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"

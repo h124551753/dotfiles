@@ -73,7 +73,6 @@ apps=(
 		autojump
     emacs-snapshot    # install the latest version from ppa
 		openssh-server
-     
 )
 
 for item in ${apps[@]}; do
@@ -91,6 +90,12 @@ select yn in "Yes" "No"; do
 		No ) break;;
 	esac
 done
+
+
+echo -e "\033[42;32m autojump deploy \033[0m"
+# for autojump: https://github.com/wting/autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
 
 echo -e "\033[42;32m install the fzf\033[0m"
