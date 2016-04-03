@@ -147,3 +147,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# put the .fzf.bash from .bashrc into .bash_aliases
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
