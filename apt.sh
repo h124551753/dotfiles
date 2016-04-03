@@ -70,6 +70,7 @@ apps=(
     curl
     git
 		firefox
+		autojump
     emacs-snapshot    # install the latest version from ppa
 		openssh-server
      
@@ -92,8 +93,12 @@ select yn in "Yes" "No"; do
 done
 
 
-echo -e "\033[42;32m change the default shell into: /bin/bash\033[0m"
+echo -e "\033[42;32m install the fzf\033[0m"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
+
+echo -e "\033[42;32m change the default shell into: /bin/bash\033[0m"
 sudo chsh -s /bin/bash
 
 cecho "Done, Happy Hacking At the Speed Of The Thought" $green

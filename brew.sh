@@ -184,6 +184,12 @@ cecho "Removing outdated versions from the brew cellar." $yellow
 brew cleanup
 
 
+# refer: https://github.com/junegunn/fzf
+cecho "fzf deloying ..." $yellow
+/usr/local/opt/fzf/install
+complete -F _fzf_file_completion -o default -o bashdefault doge
+
+
 echo ""
 cecho "Now time to install my favorate apps ..." $yellow
 apps=(
