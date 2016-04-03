@@ -85,7 +85,7 @@ select yn in "Yes" "No"; do
 	case $yn in
 		Yes )
 		    cecho "Ok! installing apps, please wait ... " $yellow
-		    apt-get install ${apps[@]}
+		    sudo apt-get install ${apps[@]}
 		    break;;
 		No ) break;;
 	esac
