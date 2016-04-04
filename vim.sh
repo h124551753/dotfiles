@@ -58,4 +58,5 @@ else
     python install.py --clang-completer
 fi
 
+cd $CURRENT_DIR
 echo -e "\033[41;32m VIM Install Done, happy hacking! \033[0m"

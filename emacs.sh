@@ -2,10 +2,12 @@
 
 sudo -v
 
-BASEDIR=$(dirname $0)
-SYSTYPE=`uname -s`
-cd $BASEDIR
-CURRENT_DIR=`pwd`
+# refer  spf13-vim bootstrap.sh`
+# BASEDIR=$(dirname $0)
+# cd $BASEDIR
+# CURRENT_DIR=`pwd`
+# or you can try:
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 lnif() {
     if [ -e "$1" ]; then
@@ -40,4 +42,5 @@ cd $HOME/.emacs.d
 
 cask install
 
+cd $CURRENT_DIR
 echo -e "\033[41;32m Done, Happy hacking With The Awesome Emacs \033[0m"
