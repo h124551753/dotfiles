@@ -1,0 +1,44 @@
+#!/bin/bash
+
+sudo -v
+
+BASEDIR=$(dirname $0)
+SYSTYPE=`uname -s`
+cd $BASEDIR
+CURRENT_DIR=`pwd`
+
+lnif() {
+    if [ -e "$1" ]; then
+        ln -sf "$1" "$2"
+    fi
+}
+
+echo -e "\033[41;32m Step1: Backing up current emacs config \033[0m"
+today=`date +%Y%m%d`
+for i in $HOME/.emacs.d; do [ -e $i ] && [ ! -L $i ] && mv $i $i.$today; done
+for i in $HOME/.emacs.d; do [ -L $i ] && unlink $i ; done
+
+
+echo -e "\033[41;32m Step2: Setting up symlinks \033[0m"
+mkdir -p $CURRENT_DIR/.vim
+lnif "$CURRENT_DIR/.emacs.d" "$HOME/.emacs.d"
+
+
+echo -e "\033[41;32m step 2: Install the cask utility for emacs \033[0m"
+if [ $SYSTYPE = "Linux" ]; then
+  curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+elif [ $SYSTYPE = "Darwin" ]; then
+  echo -e "\033[41;32m already installed the cask in your mac osx system , just continue ... \033[0m"
+else
+  echo -e "\033[41;32m unsupported system, exit \033[0m"
+fi
+
+
+echo -e "\033[41;32m step 3: Install the emacs plugins with cask \033[0m"
+echo -e "\033[41;32m It will take a long time, just be patient! ... \033[0m"
+echo -e "\033[41;32m cd $HOME/.emacs.d \033[0m"
+cd $HOME/.emacs.d
+
+cask install
+
+echo -e "\033[41;32m Done, Happy hacking With The Awesome Emacs \033[0m"

@@ -168,7 +168,7 @@ brew install zsh
 brew install zsh-completions
 brew install graphviz
 brew install htop-osx
-brew install plantuml.jar
+brew install plantuml
 brew install git-flow-avh
 # imagemagick vs graphicsmagick
 brew install graphicsmagick
@@ -178,6 +178,7 @@ brew install the_silver_searcher
 brew install node
 # Install io.js
 brew install iojs
+brew install cask
 
 # Remove outdated versions from the cellar.
 cecho "Removing outdated versions from the brew cellar." $yellow
