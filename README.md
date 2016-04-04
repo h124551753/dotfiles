@@ -1,10 +1,32 @@
-# Mathias’s dotfiles
+# xuehao zhou’s dotfiles
 
 ![Screenshot of my shell prompt](http://i.imgur.com/EkEtphC.png)
+
+This is a derived work from Mathias's dotfiles. Consider to use his setup directly. See: https://github.com/mathiasbynens/dotfiles.
+
+Disclaimer: I have tuned the dotfiles for my own use. Some of the setup may not be good for you.
+
+Chaged to Mathias's dotfiles:
+
+* use [liquidprompt](https://github.com/nojhan/liquidprompt) for shell prompt. TODO ...
+* support my awesome vim automatic configuration, you can decide whether use or not in bootsrap.
+* support my awesome emacs automatic configuration, you can decide whether use or not in bootsrap.
+* support zsh && bash both.
+
 
 ## Installation
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+
+### Quick intallation
+
+```bash
+git clone https://github.com/robertzhouxh/dotfiles /path/to/dotfiles
+cd dotfiles
+set -- -f; source bootsrap
+```
+
+(the following guide is from Mathias's project. Read on if you want to know more.)
 
 ### Using Git and the bootstrap script
 
