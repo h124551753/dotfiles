@@ -238,7 +238,7 @@ select yn in "Yes" "No"; do
 done
 
 
-echo -e "\033[41;32m autojump deploy \033[0m"
+echo -e "\033[40;32m autojump deploy \033[0m"
 
 # for autojump: https://github.com/wting/autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh

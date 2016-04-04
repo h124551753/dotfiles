@@ -24,29 +24,29 @@ unset doIt;
 
 echo ""
 
-echo -e "\033[41;32m start to install command line tools for your system ...\033[0m"
+echo -e "\033[40;32m start to install command line tools for your system ...\033[0m"
 
 sysType=`uname -s`
 
-echo -e "\033[41;32m Your system is $sysType \033[0m"
+echo -e "\033[40;32m Your system is $sysType \033[0m"
 
 if [ $sysType = "Linux" ]; then
   source ./apt.sh;
 elif [ $sysType = "Darwin" ]; then
   source ./brew.sh;
 else
-  echo -e "\033[41;32m unsupported system, exit \033[0m"
+  echo -e "\033[40;32m unsupported system, exit \033[0m"
 fi
 
-echo -e "\033[41;32m you can enter 1 to deploy my awesome vim configuration or 2 to skip it \033[0m"
+echo -e "\033[40;32m you can enter 1 to deploy my awesome vim configuration or 2 to skip it \033[0m"
 select yn in "Yes" "No"; do
   case $yn in
     Yes )
-      echo -e "\033[41;32m Cool, i will give you a awesome vim journey ... \033[0m"
+      echo -e "\033[40;32m Cool, i will give you a awesome vim journey ... \033[0m"
       source ./vim.sh
       break;;
     No ) break;;
   esac
 done
 
-echo -e "\033[41;32m All done, HAPPY HACKING \033[0m"
+echo -e "\033[40;32m All done, HAPPY HACKING \033[0m"

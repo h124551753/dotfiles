@@ -92,7 +92,7 @@ select yn in "Yes" "No"; do
 done
 
 
-echo -e "\032[41;32m autojump deploy \033[0m"
+echo -e "\032[40;32m autojump deploy \033[0m"
 # for autojump: https://github.com/wting/autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
