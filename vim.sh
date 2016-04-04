@@ -3,9 +3,11 @@
 sudo -v
 
 # refer  spf13-vim bootstrap.sh`
-BASEDIR=$(dirname $0)
-cd $BASEDIR
-CURRENT_DIR=`pwd`
+# BASEDIR=$(dirname $0)
+# cd $BASEDIR
+# CURRENT_DIR=`pwd`
+# or you can try:
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 lnif() {
     if [ -e "$1" ]; then
@@ -37,7 +39,8 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo -e "\033[41;32m install install all the plugins with plug.vim \033[0m"
-vim -u $HOME/.vimrc +PlugInstall! +PlugClean! +qall
+# vim -u $HOME/.vimrc +PlugInstall! +PlugClean! +qall
+vim -u $HOME/.vimrc +PlugInstall! +qall
 export SHELL=$system_shell
 
 

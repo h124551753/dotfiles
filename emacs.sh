@@ -20,7 +20,6 @@ for i in $HOME/.emacs.d; do [ -L $i ] && unlink $i ; done
 
 
 echo -e "\033[41;32m Step2: Setting up symlinks \033[0m"
-mkdir -p $CURRENT_DIR/.vim
 lnif "$CURRENT_DIR/.emacs.d" "$HOME/.emacs.d"
 
 
