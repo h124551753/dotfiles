@@ -59,7 +59,6 @@ set clipboard=unnamed                                        " yank and paste wi
 set directory-=.                                             " don't store swapfiles in the current directory
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
-set laststatus=2                                             " always show statusline
 set list                                                     " show trailing whitespace
 set number                                                   " show line numbers
 set ruler                                                    " show where you are
@@ -100,6 +99,10 @@ set formatoptions+=B
 set hidden                                                   " A buffer becomes hidden when it is abandoned
 set wildmode=list:longest
 set ttyfast
+
+" configuration for airline
+set t_Co=256
+set laststatus=2
 
 
 " Enable basic mouse behavior such as resizing buffers.
@@ -332,7 +335,6 @@ if has("autocmd")
 	endfun
 
   autocmd BufNewFile,BufRead *.h  setlocal filetype=h
-  autocmd BufNewFile *.[ch],*.lua,*.sh,*.py exec ":call AutoSetFileHead()"
 
   " Highlight TODO, FIXME, NOTE, etc.
   if v:version > 701
@@ -381,23 +383,26 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 " vim-airline
-if !exists("g:airline_symbols")
-  let g:airline_symbols = {}
-endif
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
+" airline {{{
+    " use the patched font for powerline: https://github.com/powerline/fonts
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+    let g:airline_left_sep = '▶'
+    let g:airline_left_alt_sep = '❯'
+    let g:airline_right_sep = '◀'
+    let g:airline_right_alt_sep = '❮'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.branch = '⎇'
+    " 是否打开tabline
+    let g:airline#extensions#tabline#enabled = 1
+" }}}
 
 if (&t_Co == 256 || has('gui_running'))
 	if ($TERM_PROGRAM == 'iTerm.app')
-		let g:molokai_original = 1
 		colorscheme molokai
 	else
-		let g:solarized_termtrans=1
-		let g:solarized_contrast="normal"
-		let g:solarized_visibility="normal"
 		colorscheme solarized
 	endif
 endif
