@@ -1,17 +1,17 @@
 # xuehao zhou’s dotfiles
 
-![Screenshot of my shell prompt](http://i.imgur.com/EkEtphC.png)
-
 This is a derived work from Mathias's dotfiles. Consider to use his setup directly. See: https://github.com/mathiasbynens/dotfiles.
 
 Disclaimer: I have tuned the dotfiles for my own use. Some of the setup may not be good for you.
 
 Chaged to Mathias's dotfiles:
 
-* use [liquidprompt](https://github.com/nojhan/liquidprompt) for shell prompt. TODO ...
+* use [liquidprompt](https://github.com/nojhan/liquidprompt) for shell prompt instead of the default.
+* use [z](https://github.com/rupa/z) for shell auto jump instead of autojump.
 * support my awesome vim automatic configuration, you can decide whether use or not in bootsrap.
 * support my awesome emacs automatic configuration, you can decide whether use or not in bootsrap.
 * support zsh && bash both.
+* support both ubuntu and macosx automatic deployment.
 
 
 ## Installation
