@@ -4,7 +4,8 @@ export PATH="$HOME/bin:$PATH";
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+# for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -47,9 +48,16 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
-# for autojump: https://github.com/wting/autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
+# # for autojump : https://github.com/wting/autojump
+# [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
 # for fzf does not loaded been in .bashrc
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+
+# for source liquidprompt
+[[ `uname -s` == "Linux" ]] && [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+[[ `uname -s` == "Darwin" ]] && . /usr/local/share/liquidprompt
+#if [ -f /usr/local/share/liquidprompt ]; then
+#  . /usr/local/share/liquidprompt
+#fi

@@ -157,13 +157,15 @@ brew install zopfli
 # custom my command line tools
 #brew install tmux
 brew install aspell
-brew install autojump
 brew install ctags
 brew install curl
 brew install fzf
 brew install trash
 brew install pcre
 brew install openssl
+brew install autojump
+brew install liquidprompt
+brew install z
 brew install zsh
 brew install zsh-completions
 brew install graphviz
@@ -236,13 +238,6 @@ select yn in "Yes" "No"; do
 		No ) break;;
 	esac
 done
-
-
-echo -e "\033[40;32m autojump deploy \033[0m"
-
-# for autojump: https://github.com/wting/autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
 
 echo -e "\033[40;33m change the default shell into: /user/local/bin/bash\033[0m"
