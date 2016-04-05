@@ -30,8 +30,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'aceofall/gtags.vim'
 
 " themes
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/seoul256.vim'
 Plug 'tomasr/molokai'
@@ -381,7 +381,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 " vim-airline
-let g:airline_symbols.space = "\ua0"
 if !exists("g:airline_symbols")
   let g:airline_symbols = {}
 endif

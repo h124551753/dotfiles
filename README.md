@@ -4,7 +4,7 @@ This is a derived work from Mathias's dotfiles. Consider to use his setup direct
 
 Disclaimer: I have tuned the dotfiles for my own use. Some of the setup may not be good for you.
 
-Chaged to Mathias's dotfiles:
+## Chaged to Mathias's dotfiles:
 
 * use [liquidprompt](https://github.com/nojhan/liquidprompt) for shell prompt instead of the default.
 * use [z](https://github.com/rupa/z) for shell auto jump instead of autojump.
@@ -14,7 +14,7 @@ Chaged to Mathias's dotfiles:
 * support both ubuntu and macosx automatic deployment.
 
 
-Attension: get you into colorful world
+## Attension: get you into colorful world
 
 - iterm2 - Preferences - Profiles - Text - Text Rendering， remove the **Draw bold text in bright colors**, and then you will get the color world!
 - iterm2 - Preferences - Profiles - Terminal - Terminal Emulation - Report Terminal Type: change **xterm** into **xterm-256color**
