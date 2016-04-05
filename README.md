@@ -14,6 +14,9 @@ Chaged to Mathias's dotfiles:
 * support both ubuntu and macosx automatic deployment.
 
 
+Attension: iTerm2 - Preferences - Profiles - Text - Text Rendering， remove the **Draw bold text in bright colors**, and then you will get the color world!
+
+
 ## Installation
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
