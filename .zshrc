@@ -41,10 +41,9 @@ export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/local/lib/erlang/man
 # use Unix Style cmd
 if brew list | grep coreutils > /dev/null ; then
   # PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-  alias ls='ls -F --show-control-chars --color=auto'
-  eval `gdircolors -b $HOME/.dir_colors`
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:/opt/local/libexec/gnubin:$PATH
 fi
+export PATH="/usr/local/sbin:$PATH"
 
 # virtualenvwrapper for python-
 if [ `id -u` != '0' ]; then
@@ -249,6 +248,5 @@ export GTAGSLABEL=ctags
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/sbin:$PATH"
+ . `brew --prefix`/etc/profile.d/z.sh

@@ -55,9 +55,8 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # for fzf does not loaded been in .bashrc
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
-# for source liquidprompt
+# for source liquidprompt && z awesome tools
 [[ `uname -s` == "Linux" ]] && [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+[[ `uname -s` == "Linux" ]] && . ~/.z/z.sh
 [[ `uname -s` == "Darwin" ]] && . /usr/local/share/liquidprompt
-#if [ -f /usr/local/share/liquidprompt ]; then
-#  . /usr/local/share/liquidprompt
-#fi
+[[ `uname -s` == "Darwin" ]] && . `brew --prefix`/etc/profile.d/z.sh
