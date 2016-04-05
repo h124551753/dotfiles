@@ -14,7 +14,23 @@ Chaged to Mathias's dotfiles:
 * support both ubuntu and macosx automatic deployment.
 
 
-Attension: iTerm2 - Preferences - Profiles - Text - Text Rendering， remove the **Draw bold text in bright colors**, and then you will get the color world!
+Attension: get you into colorful world
+
+- iterm2 - Preferences - Profiles - Text - Text Rendering， remove the **Draw bold text in bright colors**, and then you will get the color world!
+- iterm2 - Preferences - Profiles - Terminal - Terminal Emulation - Report Terminal Type: change **xterm** into **xterm-256color**
+- man color - add the followiing export into your .bashrc or .zshrc, here you can add into .exports file
+
+    ```
+    export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+    export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+    export LESS_TERMCAP_me=$'\E[0m'           # end mode
+    export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+    export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+    export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+    export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+    ```
+
+    you can also use the zsh && oh-my-zsh plugin: colored-man-pages instead.
 
 
 ## Installation

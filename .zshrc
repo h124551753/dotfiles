@@ -17,7 +17,7 @@ export ZSH_THEME
 export TERM="xterm-256color"
 
 DISABLE_AUTO_UPDATE="true"
-plugins=(git autojump)
+plugins=(git autojump colored-man-pages)
 
 # Add locations to the $PATH that actually exist.
 PATH="/usr/local/bin:$PATH"
