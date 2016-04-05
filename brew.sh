@@ -167,6 +167,7 @@ brew install openssl
 brew install autojump
 brew install liquidprompt
 brew install z
+brew install thefuck
 brew install zsh
 brew install zsh-completions
 brew install graphviz

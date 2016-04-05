@@ -17,7 +17,7 @@ export ZSH_THEME
 export TERM="xterm-256color"
 
 DISABLE_AUTO_UPDATE="true"
-plugins=(git autojump colored-man-pages)
+plugins=(git autojump colored-man-pages thefuck)
 
 # Add locations to the $PATH that actually exist.
 PATH="/usr/local/bin:$PATH"
@@ -250,3 +250,4 @@ export GTAGSLABEL=ctags
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
  . `brew --prefix`/etc/profile.d/z.sh
+eval "$(thefuck --alias)"

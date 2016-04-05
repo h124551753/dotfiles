@@ -104,6 +104,9 @@ echo -e "\033[40;32m install liquidprompt \033[0m"
 git clone https://github.com/nojhan/liquidprompt.git ~/.liquidprompt
 source ~/.liquidprompt/liquidprompt
 
+echo -e "\033[40;32m install thefuck: you can also use this to install thefuck on macosx \033[0m"
+wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
+
 echo -e "\033[40;32m change the default shell into: /bin/bash\033[0m"
 sudo chsh -s /bin/bash
 
