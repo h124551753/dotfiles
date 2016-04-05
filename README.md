@@ -42,7 +42,7 @@ Disclaimer: I have tuned the dotfiles for my own use. Some of the setup may not 
 ```bash
 git clone https://github.com/robertzhouxh/dotfiles /path/to/dotfiles
 cd dotfiles
-set -- -f; source bootsrap
+set -- -f; source bootsrap.sh
 ```
 
 (the following guide is from Mathias's project. Read on if you want to know more.)
