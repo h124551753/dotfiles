@@ -95,11 +95,12 @@ brew install narwhal
 
 # Install more recent versions of some OS X tools.
 brew install macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
+brew install emacs --HEAD --with-imagemagick --with-cocoa --with-gnutls --with-librsvg
 brew install global --with-exuberant-ctags --with-pygments --HEAD
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
-brew install homebrew/php/php56 --with-gmp
+#brew install homebrew/php/php56 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -178,7 +179,6 @@ brew install proxychains-ng
 brew install the_silver_searcher
 # Note: this installs `npm` too, using the recommended installation method.
 brew install node
-# Install io.js
 brew install iojs
 brew install cask
 
