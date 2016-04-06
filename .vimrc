@@ -174,25 +174,41 @@ noremap <leader>gg           :! open https://google.com<CR>
 noremap <leader>g            :GitGutterToggle<CR>
 noremap <silent><leader>/    :nohls<CR> " 去掉搜索高亮
 noremap <leader>nep          :set noexpandtab<CR>
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+noremap <C-h>                <C-w>h
+noremap <C-j>                <C-w>j
+noremap <C-k>                <C-w>k
+noremap <C-l>                <C-w>l
+nnoremap <C-t>               :tabnew<CR>
+inoremap <C-t>               <Esc>:tabnew<CR>
+nnoremap [b                  :bprevious<cr>
+nnoremap ]b                  :bnext<cr>
+noremap <left>               :bp<CR>
+noremap <right>              :bn<CR>
+nnoremap <leader>q           :q<CR>
+nnoremap <C-e>               2<C-e>
+nnoremap <C-y>               2<C-y>
+nnoremap <C-t>               :tabnew<CR>
+inoremap <C-t>               <Esc>:tabnew<CR>
 
 " nomal mapping
-nmap s <Plug>(easymotion-s)
-nmap t <Plug>(easymotion-s2)
-nmap <Leader>cp :!xclip -i -selection clipboard % <CR><CR>
+nmap s                       <Plug>(easymotion-s)
+nmap t                       <Plug>(easymotion-s2)
+nmap <Leader>cp              :!xclip -i -selection clipboard % <CR><CR>
+map Y                        y$
+map <leader><space>          :FixWhitespace<cr>
 
 " command line mode no recursive mode mapping
-cnoremap <C-k> <t_ku>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap w!! %!sudo tee > /dev/null %
+cnoremap <C-k>               <t_ku>
+cnoremap <C-a>               <Home>
+cnoremap <C-e>               <End>
+cnoremap w!!                 %!sudo tee > /dev/null %
 
 " visual mode mapping
-vmap v <Plug>(expand_region_expand)
-vmap V <Plug>(expand_region_shrink)
+vmap v                      <Plug>(expand_region_expand)
+vmap V                      <Plug>(expand_region_shrink)
+vnoremap <                  <gv
+vnoremap >                  >gv
+
 
 " Fix Cursor in TMUX
 if exists('$TMUX')

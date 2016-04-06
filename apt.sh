@@ -49,7 +49,6 @@ cecho "Now time to install my favorate tools ..." $yellow
 
 sudo apt-add-repository ppa:ubuntu-elisp/ppa
 sudo apt-get update
-sudo apt-get install 
 
 cecho "purge the old tools: firefox ..." $yellow
 sudo apt-get purge firefox
@@ -74,6 +73,8 @@ apps=(
 		autojump
     emacs-snapshot    # install the latest version from ppa
 		openssh-server
+    nodejs
+    npm
 )
 
 for item in ${apps[@]}; do
@@ -107,6 +108,12 @@ source ~/.liquidprompt/liquidprompt
 
 echo -e "\033[40;32m install thefuck: you can also use this to install thefuck on macosx \033[0m"
 wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
+
+read -p "install the awesome swagger, are you sure? (y/n) " -n 1;
+echo "npm install -g swagger";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  npm install -g swagger
+fi;
 
 echo -e "\033[40;32m change the default shell into: /bin/bash\033[0m"
 sudo chsh -s /bin/bash

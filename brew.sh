@@ -243,6 +243,12 @@ select yn in "Yes" "No"; do
 done
 
 
+read -p "install the awesome swagger, are you sure? (y/n) " -n 1;
+echo "npm install -g swagger";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  npm install -g swagger
+fi;
+
 echo -e "\033[40;33m change the default shell into: /user/local/bin/bash\033[0m"
 sudo chsh -s /usr/local/bin/bash
 
