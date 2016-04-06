@@ -28,6 +28,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'terryma/vim-expand-region'
 Plug 'plasticboy/vim-markdown'
 Plug 'aceofall/gtags.vim'
+Plug 'erikzaadi/vim-ansible-yaml'
 
 " themes
 Plug 'vim-airline/vim-airline'
@@ -361,7 +362,7 @@ if has("autocmd")
     autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
   endif
 
-  " md is markdown
+  au BufNewFile,BufRead *.yaml set filetype=yaml.ansible
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.md set spell
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript " Treat .json files as .js
