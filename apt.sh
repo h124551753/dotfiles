@@ -66,6 +66,7 @@ apps=(
     build-essential
 
 	  ## Dev tools
+    cmatrix
     wget
     curl
     git

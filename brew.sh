@@ -182,6 +182,8 @@ brew install the_silver_searcher
 brew install node
 brew install iojs
 brew install cask
+# cool hack command
+brew install cmatrix
 
 # Remove outdated versions from the cellar.
 cecho "Removing outdated versions from the brew cellar." $yellow
