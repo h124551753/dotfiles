@@ -54,7 +54,7 @@ syntax enable                                                " enable syntax hig
 filetype on                                                  " turn on file type check
 filetype indent on                                           " turn on indent acording to file type
 filetype plugin on                                           " turn on indent acording to file type and plugin
-filetype plugin indent on                         
+filetype plugin indent on
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
@@ -124,9 +124,9 @@ endif
 
 
 " ================================ Key Mapping =======================================
-" :help map ===> [n|v|nore|un|]map 
+" :help map ===> [n|v|nore|un|]map
 " nore: no recursive
-" map {lhs} {rhs} ===> 表示将{lhs}按键序列映射到{rhs}按键序列 
+" map {lhs} {rhs} ===> 表示将{lhs}按键序列映射到{rhs}按键序列
 " Command-Line/Ex Mode
 " normal mode enter (:) and then get into Command-Line namely C-mode
 " normal mode enter (Q) and then get into multi-Command-Line namely Ex-mode
@@ -135,6 +135,10 @@ let mapleader = ','
 let g:mapleader = ','
 inoremap jj <ESC>
 set pastetoggle=<leader>2
+
+map <F2>                     :retab <CR> :wq! <CR>
+map Y                        y$
+map <leader><space>          :FixWhitespace<cr>
 
 " normal no recursive mapping
 nnoremap <leader>p           :CtrlP<CR>
@@ -169,7 +173,7 @@ nnoremap <Leader>gP          :Git push -u origin<space>
 nnoremap <silent> <Leader>g1 :Git diff<CR>
 nnoremap <silent> <Leader>g2 :Git diff --staged<CR>
 
-" no recursive normal and visual mode mapping 
+" no recursive normal and visual mode mapping
 noremap <leader>gh           :! open https://github.com<CR>
 noremap <leader>gg           :! open https://google.com<CR>
 noremap <leader>g            :GitGutterToggle<CR>
@@ -195,8 +199,6 @@ inoremap <C-t>               <Esc>:tabnew<CR>
 nmap s                       <Plug>(easymotion-s)
 nmap t                       <Plug>(easymotion-s2)
 nmap <Leader>cp              :!xclip -i -selection clipboard % <CR><CR>
-map Y                        y$
-map <leader><space>          :FixWhitespace<cr>
 
 " command line mode no recursive mode mapping
 cnoremap <C-k>               <t_ku>
@@ -348,11 +350,11 @@ if has("autocmd")
   augroup END
 
   fun! <SID>StripTrailingWhitespaces()
-  	let l = line(".")
-  	let c = col(".")
-  	%s/\s\+$//e
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
   call cursor(l, c)
-	endfun
+    endfun
 
   autocmd BufNewFile,BufRead *.h  setlocal filetype=h
 
@@ -420,9 +422,9 @@ au Syntax * RainbowParenthesesLoadBraces
 " }}}
 
 if (&t_Co == 256 || has('gui_running'))
-	if ($TERM_PROGRAM == 'iTerm.app')
-		colorscheme molokai
-	else
-		colorscheme solarized
-	endif
+    if ($TERM_PROGRAM == 'iTerm.app')
+        colorscheme molokai
+    else
+        colorscheme solarized
+    endif
 endif

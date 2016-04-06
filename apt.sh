@@ -29,7 +29,7 @@ cecho "attension: please make sure you have installed the command line tools use
 echo ""
 
 
-if hash apt 2>/dev/null; then
+if hash apt-get 2>/dev/null; then
 	cecho "apt has been installed, just continue install ..." $green
 else
 	cecho "no apt found! exit ..." $yellow
@@ -56,12 +56,12 @@ sudo apt-get purge firefox
 apps=(
 	  # Utilities
     ## for openresty
-    libreadline-dev 
-    libncurses5-dev 
+    libreadline-dev
+    libncurses5-dev
     libpcre3-dev
     libssl-dev
-    perl 
-    make 
+    perl
+    make
     build-essential
 
 	  ## Dev tools
@@ -69,9 +69,9 @@ apps=(
     wget
     curl
     git
-		firefox
+		##firefox
 		autojump
-    emacs-snapshot    # install the latest version from ppa
+    ##emacs-snapshot    # install the latest version from ppa
 		openssh-server
     nodejs
     npm
