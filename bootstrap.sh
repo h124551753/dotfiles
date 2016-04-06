@@ -42,6 +42,8 @@ echo -e "\033[40;32m you can enter 1 to deploy my awesome vim configuration or 2
 select yn in "Yes" "No"; do
   case $yn in
     Yes )
+      echo ""
+      echo ""
       echo -e "\033[40;32m Cool, i will give you a awesome vim journey ... \033[0m"
       source ./vim.sh
       break;;
@@ -49,4 +51,10 @@ select yn in "Yes" "No"; do
   esac
 done
 
-echo -e "\033[40;32m All done, HAPPY HACKING \033[0m"
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo -e "\033[40;32m All done, HAPPY HACKING :-) \033[0m"
