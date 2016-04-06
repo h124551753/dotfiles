@@ -28,6 +28,7 @@ lnif $CURRENT_DIR/.vimrc $HOME/.vimrc
 lnif "$CURRENT_DIR/.vim" "$HOME/.vim"
 lnif "$CURRENT_DIR/.vim/autoload/plug.vim" "$HOME/.vim/autoload/plug.vim"
 lnif "$CURRENT_DIR/.vim/plugged/YouCompleteMe" "$HOME/.vim/plugged/YouCompleteMe"
+lnif "$CURRENT_DIR/.vim/vimrc.bundles.local" "$HOME/.vim/vimrc.bundles.local"
 
 
 echo -e "\033[40;32m Step3: update/install plugins using Vundle \033[0m"
