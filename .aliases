@@ -159,8 +159,8 @@ alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 
 #ssh 
 alias ssh45='sshpass -p zhongjin ssh zhongjin@192.168.0.45'
-alias sshintoyun='sshpass -p Molmc26554422 ssh root@112.124.117.64'
-alias sshintorobot='sshpass -p Molmc26554422 ssh root@115.29.193.81'
+alias sshintoyun='sshpass -p ssh root@112.124.117.64'
+alias sshintorobot='sshpass -p ssh root@115.29.193.81'
 alias uploadmaker='mv ~/git/molmc_app/android/IntoRobot/app/build/outputs/app-intorobot-release.apk ~/git/molmc_app/android/IntoRobot/app/build/outputs/Maker.apk && scp ~/git/molmc_app/android/IntoRobot/app/build/outputs/Maker.apk zhongjin@192.168.0.45:~/vagrant/cluster/downloads/apps'
 alias vipwd='vim ~/Documents/Documents/帐号/password'
 

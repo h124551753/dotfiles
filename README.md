@@ -1,4 +1,4 @@
-# xuehao zhou’s dotfiles
+# hehui’s dotfiles
 
 This is a derived work from Mathias's dotfiles. Consider to use his setup directly. See: https://github.com/mathiasbynens/dotfiles.
 
