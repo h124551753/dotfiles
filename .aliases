@@ -10,10 +10,9 @@ alias -- -="cd -"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias w="cd ~/workspace"
 alias g="git"
-alias h="history"
-alias j="jobs"
+alias gm="cd ~/git/molmc_app"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -147,3 +146,24 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+#git shortcut
+alias gaa='git add .'
+alias gcv='git commit --verbose'
+alias gco='git checkout'
+alias gs='git status'
+alias gb='git branch'
+alias gd='git diff'
+alias grh='git reset --hard'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit "
+
+#ssh 
+alias ssh45='sshpass -p zhongjin ssh zhongjin@192.168.0.45'
+alias sshintoyun='sshpass -p Molmc26554422 ssh root@112.124.117.64'
+alias sshintorobot='sshpass -p Molmc26554422 ssh root@115.29.193.81'
+alias uploadmaker='mv ~/git/molmc_app/android/IntoRobot/app/build/outputs/app-intorobot-release.apk ~/git/molmc_app/android/IntoRobot/app/build/outputs/Maker.apk && scp ~/git/molmc_app/android/IntoRobot/app/build/outputs/Maker.apk zhongjin@192.168.0.45:~/vagrant/cluster/downloads/apps'
+alias vipwd='vim ~/Documents/Documents/帐号/password'
+
+#screen shot
+alias ss="gnome-screenshot -a"
+
