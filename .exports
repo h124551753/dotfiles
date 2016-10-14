@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Make vim the default editor.
 export EDITOR='vim';
 
@@ -57,3 +59,24 @@ export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
 export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode – yellow
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
+
+# proxy settings
+# export http_proxy='http://127.0.0.1:8118'
+# export https_proxy='http://127.0.0.1:8118'
+
+# go
+# export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/goEnv:$HOME/githubs/goDir/goMolmc
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/local/lib/erlang/man:$MANPATH
+
+## nvm
+export NVM_DIR="$HOME/.nvm"
+#. "$(brew --prefix nvm)/nvm.sh"
+
+## android studio
+export ANDROID_SDK=$HOME/AndroidTools/sdk:$ANDROID_SDK
+export PATH=$HOME/AndroidTools/android-studio/bin:$PATH
+
+

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -10,15 +12,18 @@ alias -- -="cd -"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias w="cd ~/workspace"
+alias p="cd ~/projects"
 alias g="git"
-alias gm="cd ~/git/molmc_app"
+alias h="history"
+alias j="jobs"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
+  export LS_COLORS='no=00:fi=00:di=01;31:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 else # OS X `ls`
 	colorflag="-G"
+  export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
 # List all files colorized in long format
@@ -32,8 +37,6 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
-
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
@@ -51,7 +54,10 @@ alias week='date +%V'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -147,6 +153,27 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
+# proxy to local shadowsocks proxy, eg: pc4 ping www.google.com
+alias pc4="proxychains4 "
+alias pc3="proxychains "
+alias ssl="sslocal -c /etc/shadowsocks.json -d "
+alias sss="ssserver -c /etc/shadowsocks.json -d "
+
+# privoxy settings: convert the socks5 proxy into http proxy
+alias privoxy="/etc/init.d/privoxy restart"
+alias proxy='export http_proxy=http://127.0.0.1:8118;export HTTPS_PROXY=$http_proxy;export HTTP_PROXY=$http_proxy;export FTP_PROXY=$http_proxy;export https_proxy=$http_proxy;export ftp_proxy=$http_proxy;'
+alias noproxy='unset http_proxy;unset HTTPS_PROXY;unset HTTP_PROXY;unset FTP_PROXY;unset https_proxy;unset ftp_proxy'
+
+# ssh configuration
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+alias ssh='ssh -A'
+alias testbroker="ssh -i ~/.ssh/id_rsa -o ServerAliveInterval=10 root@testbroker"
+alias testdb="ssh -i ~/.ssh/id_rsa -o ServerAliveInterval=10 root@testdb"
+
+# for emacs ggtags
+export GTAGSCONF=/usr/local/share/gtags/gtags.conf
+export GTAGSLABEL=ctags
+
 #git shortcut
 alias gaa='git add .'
 alias gcv='git commit --verbose'
@@ -157,13 +184,13 @@ alias gd='git diff'
 alias grh='git reset --hard'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit "
 
-#ssh 
-alias ssh45='sshpass -p zhongjin ssh zhongjin@192.168.0.45'
-alias sshintoyun='sshpass -p ssh root@112.124.117.64'
-alias sshintorobot='sshpass -p ssh root@115.29.193.81'
-alias uploadmaker='mv ~/git/molmc_app/android/IntoRobot/app/build/outputs/app-intorobot-release.apk ~/git/molmc_app/android/IntoRobot/app/build/outputs/Maker.apk && scp ~/git/molmc_app/android/IntoRobot/app/build/outputs/Maker.apk zhongjin@192.168.0.45:~/vagrant/cluster/downloads/apps'
-alias vipwd='vim ~/Documents/Documents/帐号/password'
 
-#screen shot
+#ssh·¬
+alias ssh45='sshpass -p zhongjin ssh zhongjin@192.168.0.45'¬
+alias sshintoyun='sshpass -p ssh root@112.124.117.64'¬
+alias sshintorobot='sshpass -p ssh root@115.29.193.81'¬
+alias uploadmaker='mv ~/gitlab/andriod-intorobot/app/build/outputs/app-intorobot-release.apk ~/gitlab/anroid-intorobot/app/build/outputs/Maker.apk &
+alias vipwd='vim ~/Documents/Documents/帐号/password'¬
+¬
+#screen shot¬
 alias ss="gnome-screenshot -a"
-
