@@ -189,7 +189,7 @@ alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 alias ssh45='sshpass -p zhongjin ssh zhongjin@192.168.0.45'¬
 alias sshintoyun='sshpass -p ssh root@112.124.117.64'¬
 alias sshintorobot='sshpass -p ssh root@115.29.193.81'¬
-alias uploadmaker='mv ~/gitlab/andriod-intorobot/app/build/outputs/app-intorobot-release.apk ~/gitlab/anroid-intorobot/app/build/outputs/Maker.apk &
+alias uploadmaker='mv ~/gitlab/andriod-intorobot/app/build/outputs/app-intorobot-release.apk ~/gitlab/anroid-intorobot/app/build/outputs/Maker.apk &'
 alias vipwd='vim ~/Documents/Documents/帐号/password'¬
 ¬
 #screen shot¬
